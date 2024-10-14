@@ -25,4 +25,12 @@ describe "#caesar_cipher" do
       expect(result).to eql(result)
     end
   end
+
+  context 'when it last close to last alphabets' do
+    it "should wrap around to the first ones depending on the shift" do
+      string = 'zZ'
+      result = caesar_cipher(string, shift)
+      expect(result).to eql('aA')
+    end
+  end
 end
